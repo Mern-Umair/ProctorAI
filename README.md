@@ -4,7 +4,7 @@
 > flags the four most common cheating signals **in real time, entirely in the browser**:
 > 👀 looking away · 📱 phone in view · 👥 another person in frame · 🚫 student leaves the camera.
 
-**Live demo:** _coming soon (Vercel)_ · **Report:** `docs/` · **Video:** _YouTube link_ · **Slides:** `docs/`
+**GitHub:** https://github.com/Mern-Umair/ProctorAI · **Live demo:** _Vercel link coming_ · **Report:** [PDF](https://github.com/Mern-Umair/ProctorAI/blob/main/docs/ProctorAI_Report.pdf) · **Slides:** [PPTX](https://github.com/Mern-Umair/ProctorAI/blob/main/docs/ProctorAI_Presentation.pptx) · **Video:** _YouTube link coming_
 
 ---
 

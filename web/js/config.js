@@ -6,9 +6,9 @@ export const AUTHOR = {
 };
 
 export const LINKS = {
-  github: "https://github.com/YOUR_USERNAME/ProctorAI",
-  report: "https://github.com/YOUR_USERNAME/ProctorAI/blob/main/docs/ProctorAI_Report.pdf",
-  slides: "https://github.com/YOUR_USERNAME/ProctorAI/blob/main/docs/ProctorAI_Presentation.pptx",
+  github: "https://github.com/Mern-Umair/ProctorAI",
+  report: "https://github.com/Mern-Umair/ProctorAI/blob/main/docs/ProctorAI_Report.pdf",
+  slides: "https://github.com/Mern-Umair/ProctorAI/blob/main/docs/ProctorAI_Presentation.pptx",
   youtube: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
   linkedin: "https://www.linkedin.com/in/YOUR_PROFILE",
   datasetHeadPose: "https://huggingface.co/datasets/StevenLe456/head-pose",
