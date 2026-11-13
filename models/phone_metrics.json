@@ -1,0 +1,15 @@
+{
+  "epochs": 15,
+  "imgsz": 320,
+  "model": "yolov8n fine-tuned (1 class: phone)",
+  "test_mAP50": 0.92664126984127,
+  "test_mAP50_95": 0.7263829004329005,
+  "test_precision": 1.0,
+  "test_recall": 0.8146470209368644,
+  "coco_baseline": {
+    "test_mAP50": 0.7791693121693122,
+    "test_mAP50_95": 0.6385150553054368,
+    "test_precision": 0.9491044008128904,
+    "test_recall": 0.5185185185185185
+  }
+}

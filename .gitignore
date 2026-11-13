@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+# Data (large) - see data/README.md for download instructions
+data/raw/
+data/processed/
+# Training runs
+runs/
+*.cache
+# Node
+node_modules/
+.vercel/
+# OS
+.DS_Store
+Thumbs.db
+.wheels/
+runs_phone_log.txt
+yolov8n.pt
+*.pt.bak
+web_server.log

@@ -1,0 +1,14 @@
+torch>=2.3
+ultralytics>=8.3
+mediapipe>=0.10
+onnx>=1.16
+onnxruntime>=1.18
+onnxscript
+opencv-python>=4.9
+scikit-learn>=1.4
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+tqdm
+pyyaml

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProctorAI – Live Demo</title>
+  <meta name="description" content="Real-time AI exam proctoring running entirely in your browser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js"></script>
+</head>
+<body class="demo-page">
+  <header class="nav">
+    <a class="brand" href="./index.html"><span class="logo">🛡️</span> ProctorAI</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./index.html#dataset">Dataset &amp; Code</a>
+      <a href="./index.html#results">Results</a>
+      <a id="nav-github" href="#" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="demo">
+    <section class="stage-col">
+      <div class="stage mirrored">
+        <video id="video" playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div id="status" class="status idle">Press “Start session” to begin</div>
+        <div class="chips">
+          <span class="chip" id="chip-fps">– fps</span>
+          <span class="chip" id="chip-faces">Faces: –</span>
+          <span class="chip" id="chip-attn">Gaze: –</span>
+          <span class="chip" id="chip-phone">Phone: –</span>
+        </div>
+      </div>
+      <p class="privacy">🔒 Privacy: all models run inside your browser (WebAssembly). No video or image ever leaves your device.</p>
+      <div class="howto card">
+        <h3>Try to “cheat” and watch it get caught</h3>
+        <ul>
+          <li>👀 Turn your head left / right, look up or down for more than a second.</li>
+          <li>📱 Hold a phone in front of the camera.</li>
+          <li>👥 Ask someone to step into the frame.</li>
+          <li>🚫 Move out of the camera view.</li>
+        </ul>
+      </div>
+    </section>
+
+    <aside class="panel-col">
+      <div class="card panel">
+        <div class="panel-head">
+          <div>
+            <div class="label">Session time</div>
+            <div id="timer" class="timer">00:00</div>
+          </div>
+          <div class="score-wrap">
+            <div class="label">Integrity score</div>
+            <div id="score" class="score ok">100</div>
+            <div id="verdict" class="verdict">Clean</div>
+          </div>
+        </div>
+        <ul class="counters">
+          <li><span>👀 Looking away</span><b id="count-looking_away">0</b></li>
+          <li><span>📱 Phone detected</span><b id="count-phone">0</b></li>
+          <li><span>👥 Multiple persons</span><b id="count-multiple_faces">0</b></li>
+          <li><span>🚫 Face missing</span><b id="count-no_face">0</b></li>
+        </ul>
+        <div class="actions">
+          <button id="btn-start" class="btn primary">▶ Start session</button>
+          <button id="btn-end" class="btn danger" disabled>■ End session</button>
+        </div>
+        <label class="toggle"><input type="checkbox" id="mirror" checked /> Mirror preview</label>
+      </div>
+
+      <div class="card">
+        <h3>Live event log</h3>
+        <ul id="log" class="log"><li class="muted">No events yet</li></ul>
+      </div>
+    </aside>
+  </main>
+
+  <section id="report" class="report card">
+    <h2>Session report</h2>
+    <div class="report-grid">
+      <div class="r-score-box">
+        <div id="r-score" class="big-score ok">–</div>
+        <div id="r-verdict" class="verdict">–</div>
+        <div class="label">Integrity score / 100</div>
+      </div>
+      <div class="r-meta">
+        <div><span class="label">Duration</span><b id="r-duration">–</b></div>
+        <div><span class="label">Total violations</span><b id="r-total">–</b></div>
+      </div>
+    </div>
+    <table class="table">
+      <thead><tr><th>Violation</th><th>Count</th><th>Total time</th><th>Penalty</th></tr></thead>
+      <tbody id="r-summary"></tbody>
+    </table>
+    <h3>Timeline</h3>
+    <ul id="r-timeline" class="log"></ul>
+    <div class="actions no-print">
+      <button id="btn-json" class="btn">⬇ Download JSON</button>
+      <button id="btn-print" class="btn">🖨 Print / Save PDF</button>
+      <button id="btn-restart" class="btn primary">↻ New session</button>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>ProctorAI · Deep Learning semester project · Built with MediaPipe, PyTorch, YOLOv8 &amp; ONNX Runtime Web</span>
+  </footer>
+
+  <script type="module">
+    import { LINKS } from "./js/config.js";
+    document.getElementById("nav-github").href = LINKS.github;
+  </script>
+  <script type="module" src="./js/proctor.js"></script>
+</body>
+</html>
