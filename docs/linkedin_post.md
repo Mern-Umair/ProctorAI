@@ -17,7 +17,7 @@ What's under the hood:
 
 The hardest parts weren't the models — they were making the Python and JavaScript feature pipelines numerically identical, and designing the temporal logic so a blink or a quick glance doesn't become a false alarm.
 
-🔗 Live demo: {{VERCEL_URL}}
+🔗 Live demo: https://proctorai-web.vercel.app
 💻 Code + weights: https://github.com/Mern-Umair/ProctorAI
 ▶️ Walkthrough video: {{YOUTUBE_URL}}
 📄 Report: in the repo

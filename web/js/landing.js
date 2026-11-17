@@ -18,7 +18,7 @@ function setLinks() {
 
   // embed YouTube if a real video id is configured
   const m = LINKS.youtube.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
-  if (m) {
+  if (m && !LINKS.youtube.includes("YOUR_")) {
     $("yt").src = `https://www.youtube.com/embed/${m[1]}`;
     $("video-wrap").hidden = false;
   }
